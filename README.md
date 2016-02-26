@@ -3,8 +3,8 @@ A Simple and lightweight LRUCache based on fixed size Doubly-linked list, uses p
 
 Building
 ========
-	There is no separate build process needed! Just drop in the header file (FastCache.h) and source file (FastCache.cpp)
-	in your project and you are ready to go.
+	There is no separate build process needed! Just drop in the header file (FastCache.h) and source file (FastCache.cpp) in your project 
+	and you are ready to go.
 	The only requirement is a C++ 11 compliant compiler (in my case it's Visual Studio 2012).
 	
 Usage
