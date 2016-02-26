@@ -31,12 +31,13 @@ int main()
 	for(int i=0; i<CACHE_SIZE; i++)
 		cache.set(key[i], (unsigned char*)data[i], strlen(data[i]));		//set data in cache
 
-	cout << (char*)cache.get(key[0]) <<endl;		//will not print anything as key[0] does not exists in the cache
+	cout << (char*)cache.get(key[0]) <<endl;		//will print Lorem and push key[0] to head of cache
 	cout << (char*)cache.get(key[4]) <<endl;		//will print numquam and push key[4] to head of cache
 
 	cache.set(key[3], (unsigned char*)data[0], strlen(data[0]));	//will change "4"=>"amet" to "4"=>"Lorem" and push it to head
 
 	cache.dumpData();
 
+	cin.get();
 	return 0;
 }

@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\FastCache.cpp" />
     <ClCompile Include="..\test\basic.cpp" />
   </ItemGroup>
   <ItemGroup>
