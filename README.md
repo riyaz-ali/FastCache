@@ -16,3 +16,19 @@ Usage
 	/*Only in debug mode -- This will dump all of the cache's data to stdout*/
 	cache.dumpData();
 	
+Pros
+====
+	* Lightweight and fast
+	* Zero memory fragmentation
+	* Allocation and De-Allocation happen only once during construction and destruction
+	
+Cons
+====
+	* Rigid in nature
+	* May consume memory unnecessarily when cache is empty or not fully used
+	
+How it works
+============
+	* During compilation the block size is decided and data is stored in an unsigned char buffer
+	* At runtime, during initialization of class object the blocks are dynamically allocated on heap
+	* Then pointer manipulation is used to simulate the working of a doubly-linked list, without actually allocating or deallocating memory
