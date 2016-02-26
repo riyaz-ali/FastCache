@@ -13,10 +13,12 @@ using namespace std;
 #define FAST_CACHE_BLOCK_SIZE	(102400) //100kb default size
 #endif	//FAST_CACHE_BLOCK_SIZE
 
-#if FAST_CACHE_BLOCK_SIZE < 50
+#if FAST_CACHE_BLOCK_SIZE < (50)	//lesser than 50bytes
 #error Block size too low. Constituting overhead will be much larger! 
-#error If you want to continue, comment out line 16 - 19
+#elif FAST_CACHE_BLOCK_SIZE > (1024*1024)	//Greater than 1mb
+#error Block size too large.
 #endif
+
 
 namespace FastCache {
 	
@@ -65,11 +67,6 @@ namespace FastCache {
 				{
 					cerr << "Length of source greater than block size! Possible loss of data" << endl;
 					len = FAST_CACHE_BLOCK_SIZE;	//truncate max length
-				}
-				if(len <= 0)
-				{
-					cerr << "LENGTH = 0! \n Failed to update cache";
-					return 1;
 				}
 				memcpy(_storage, _d, len);
 				_key = k;
